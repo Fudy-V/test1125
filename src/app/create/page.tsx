@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { handleAdd } from "./serverActions";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Page = () => {
   const [text, setText] = useState("");
@@ -40,6 +41,12 @@ const Page = () => {
           追加
         </button>
       </form>
+      <Link
+        href="/"
+        className="absolute top-0 m-3 border-black border-2 w-20 h-20 items-center justify-center flex bold rounded-md"
+      >
+        Home
+      </Link>
     </div>
   );
 };
