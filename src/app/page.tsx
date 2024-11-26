@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getTodo } from "./api/Todo/getTodo";
-// import { deleteTodo } from "./api/Todo/deleteTodo";
-// import { FormEvent } from "react";
+import DeleteButton from "@/component/ui/DeleteButton";
 
 const Header = () => {
   return (
@@ -16,15 +15,16 @@ const Header = () => {
 
 const TodoList = async () => {
   const todos = await getTodo();
+
   return (
     <div className="flex flex-col justify-center items-center">
       {todos.map((todo) => (
-        <div key={todo.id} className="flex-row flex items-center justify-between w-1/4">
-          <h1 className="my-3 font-bold  text-2xl">{todo.title}</h1>
+        <div key={todo.id} className="flex-row flex items-center justify-between w-2/3 ">
+          <h1 className="my-3 font-bold  text-2xl w-1/2 overflow-scroll whitespace-nowrap">
+            {todo.title}
+          </h1>
 
-          <button className="w-16 h-10 bg-black hover:bg-slate-500 text-slate-200 rounded-md">
-            削除
-          </button>
+          <DeleteButton />
         </div>
       ))}
     </div>
