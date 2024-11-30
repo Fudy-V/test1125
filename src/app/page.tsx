@@ -19,7 +19,7 @@ const TodoList = async () => {
   return (
     <div className="flex flex-col justify-center items-center">
       {todos.map((todo) => (
-        <div key={todo.id} className="flex-row flex items-center justify-between w-2/3 ">
+        <div key={todo.id} className="flex-row flex items-center justify-between w-3/4 ">
           <h1 className="my-3 font-bold  text-2xl w-1/2 overflow-scroll whitespace-nowrap">
             {todo.title}
           </h1>

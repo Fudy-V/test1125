@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function DELETE(req: Request) {
   try {
-    const { id } = await req.json();
+    const id = await req.json();
     if (!id) {
       return NextResponse.json({ error: "IDが必要です" }, { status: 400 });
     }
